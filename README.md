@@ -1,4 +1,4 @@
-#TIP 101: Intro-to-Technical-Interview-Prep-Summer-2024
+# TIP 101: Intro-to-Technical-Interview-Prep-Summer-2024
 
 Tuesdays & Thursdays 
 
