@@ -92,17 +92,49 @@ def min_distance(words, word1, word2):
 #     i) If the start index has already been foudn, update the minimum distance (if smaller)
 # 3) If the minimum distance was at some point updated, return it
 # 4) Otherwise, return -1
+
+# Chatgpt
+def min_distance(words, word1, word2):
+  index1 = index2 = -1
+  min_dist = float('inf')
+
+  for i, word in enumerate(words):
+      if word == word1:
+          index1 = i
+      elif word == word2:
+          index2 = i
+
+      if index1 != -1 and index2 != -1:
+          min_dist = min(min_dist, abs(index1 - index2))
+
+  return min_dist
+#  This function works as follows:
+
+# Initialize index1 and index2 to -1, which will store the most recent positions of word1 and word2, respectively.
+# Initialize min_dist to infinity, which will store the minimum distance found.
+# Iterate through the list of words using enumerate to get both the index and the word.
+# If the current word matches word1, update index1 with the current index.
+# If the current word matches word2, update index2 with the current index.
+# If both index1 and index2 have been updated (i.e., are not -1), calculate the absolute distance between index1 and index2 and update min_dist if this distance is smaller than the current min_dist.
+# After the loop, return the minimum distance found.
 # 
 
-words = ["the", "quick", "brown", "fox", "jumped", "the"]
-dist1 = min_distance(words, "quick", "jumped")
-dist2 = min_distance(words, "the", "jumped")
-print(dist1)
-print(dist2)
+# Example usage:
+words = ["the", "quick", "brown", "fox", "jumps", "over", "the", "lazy", "dog"]
+word1 = "quick"
+word2 = "dog"
+print(min_distance(words, word1, word2))  # Output: 7
 
-words2 = ["code", "path", "code", "contribute",  "practice"]
-dist3 = min_distance(words, "code", "practice")
-print(dist3)
+
+# words = ["the", "quick", "brown", "fox", "jumped", "the"]
+# dist1 = min_distance(words, "quick", "jumped")
+# dist2 = min_distance(words, "the", "jumped")
+# print(dist1)
+# print(dist2)
+
+# words2 = ["code", "path", "code", "contribute",  "practice"]
+# dist3 = min_distance(words, "code", "practice")
+# print(dist3)
 
 
   
